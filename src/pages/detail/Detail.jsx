@@ -16,8 +16,6 @@ const Detail = () => {
   const { category, id } = useParams();
   const [item, setItem] = useState(null);
 
-  console.log(category);
-
   useEffect(() => {
     const getDetail = async () => {
       const response = await tmdbApi.detail(category, id, { params: {} });

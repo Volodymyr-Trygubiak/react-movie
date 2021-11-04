@@ -16,14 +16,13 @@ const MovieGrid = ({ category, movie }) => {
 
   const { keyword } = useParams();
 
-  console.log('keyword', keyword);
   useEffect(() => {
     const getList = async () => {
       let response = null;
 
       if (keyword === undefined) {
         const params = {};
-        console.log("hello", params);
+
         switch (category) {
           case categoryType.movie:
             response = await tmdbApi.getMoviesList(movieType.upcoming, { params });
